@@ -1,6 +1,6 @@
 {
     
-} 
+}
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -120,5 +120,8 @@ function updateCartTotal() {
     }
     
     total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart-total-price')[0].innerText = 'R$ ' + total
+    var cartTotalPrice = document.getElementById('total');
+    var total_formatado = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    cartTotalPrice.innerHTML = total_formatado;
+
 }
